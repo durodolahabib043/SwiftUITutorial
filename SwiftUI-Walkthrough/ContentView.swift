@@ -10,23 +10,34 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         VStack {
-            Image(systemName: "moon.stars.fill").resizable().aspectRatio(contentMode: .fit).padding(30).background(Color.green)
-    
-            Text("Hello, world!")
-                .padding(5)
-                .background(Color.red.blur(radius: 3.0))
-            Button(action: show) {
-                Text("Click here").padding().foregroundColor(Color.orange)
+            //self.background(Color.red)
+            Image(systemName: "person.crop.circle.fill.badge.plus")
+                .renderingMode(.original)
+                .foregroundColor(.blue)
+                .font(.largeTitle).padding()
+            Spacer()
+            
+            HStack(spacing: 30) {
+                Image("card1").resizable().aspectRatio(contentMode: .fit).padding(30).background(Color.green)
+                Spacer()
+                Image("card2").resizable().aspectRatio(contentMode: .fit).padding(30).background(Color.green)
+            }.padding()
+            Spacer()
+            Image(systemName: "cloud.sun.rain.fill").padding(40)
+            Spacer()
+            HStack(spacing: 70) {
+                VStack{
+                    Text("Power")
+                    Text("0").padding()
+                }
+                
+                VStack{
+                    Text("CPU")
+                    Text("0").padding()
+                }
             }
-
-            ZStack {
-                Image(systemName: "moon.stars.fill").resizable().aspectRatio(contentMode: .fit).padding(30).background(Color.green)
-               
-                HStack(spacing: 40, content: {
-                    Text("Double")
-                    Text("Mileage")
-                }).background(Color.pink)
-            }
+            Spacer()
+        
             
         }
  
