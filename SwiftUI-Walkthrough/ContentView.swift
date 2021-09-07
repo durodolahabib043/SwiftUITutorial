@@ -10,38 +10,28 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         VStack {
-            //self.background(Color.red)
-            Image(systemName: "person.crop.circle.fill.badge.plus")
-                .renderingMode(.original)
-                .foregroundColor(.blue)
-                .font(.largeTitle).padding()
-            Spacer()
+            MapView().ignoresSafeArea().frame(height:300)
+            CircleImage().offset(y:-160).padding(.bottom,-200)
             
-            HStack(spacing: 30) {
-                Image("card1").resizable().aspectRatio(contentMode: .fit).padding(30).background(Color.green)
-                Spacer()
-                Image("card2").resizable().aspectRatio(contentMode: .fit).padding(30).background(Color.green)
-            }.padding()
-            Spacer()
-            Image(systemName: "cloud.sun.rain.fill").padding(40)
-            Spacer()
-            HStack(spacing: 70) {
-                VStack{
-                    Text("Power")
-                    Text("0").padding()
+            VStack(alignment: .leading) {
+                Text("Turtle Rock").font(.title)
+                HStack(){
+                   
+                    Text("National Park")
+                    Spacer()
+                    Text("California")
                 }
+                Divider()
                 
-                VStack{
-                    Text("CPU")
-                    Text("0").padding()
-                }
+                Text("About the park").font(.title2)
+                Text("Description goes here")
             }
             Spacer()
-        
             
+           
+           
         }
- 
-    
+      
     }
     
     fileprivate func show(){
